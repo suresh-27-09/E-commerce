@@ -37,7 +37,11 @@ def blog(request):
 def blog_details(request):
     return render(request,'blog-details.html')
 def shop(request):
-    return render(request,'shop-grid.html')
+    pro=Products.objects.all()
+    ca=Category.objects.all()
+
+
+    return render(request,'shop-grid.html',{'product':pro,'category':ca})
 def shop_details(request):
     return render(request,'shop-details.html')
 def shop_cart(request):
