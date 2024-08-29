@@ -3,7 +3,8 @@ from .models import *
 # Create your views here.
 def index(request):
     if 'email' in request.session:
-        return render(request,'index.html',{'session':request.session['email']})
+        ca=Category.objects.all()
+        return render(request,'index.html',{'session':request.session['email'],'category':ca})
     else:
         return render(request,'index.html',{'session':None})
 def register(request):
