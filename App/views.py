@@ -51,7 +51,7 @@ def shopcat(request,id):
     cat_pro=Products.objects.filter(category_id=id)
     print(cat_pro)
     print("here working")
-    return render(request,'shop-grid.html',{'product':pro,'category':ca})
+    return render(request,'shop-grid.html',{'product':pro,'category':ca,'catpro':cat_pro})
 
 def shop_details(request):
     return render(request,'shop-details.html')
