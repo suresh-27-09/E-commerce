@@ -252,7 +252,7 @@
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             {% for i in category %}
-                            <li>{{i.c_name}}</li>
+                           <a href="{% url 'shopcat' id=i.cid %}"> <li>{{i.c_name}}</li></a>
                             {% endfor %}
                            
                         </ul>

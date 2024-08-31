@@ -39,9 +39,20 @@ def blog_details(request):
 def shop(request):
     pro=Products.objects.all()
     ca=Category.objects.all()
+   
+
+
 
 
     return render(request,'shop-grid.html',{'product':pro,'category':ca})
+def shopcat(request,id):
+    pro=Products.objects.all()
+    ca=Category.objects.all()
+    cat_pro=Products.objects.filter(category_id=id)
+    print(cat_pro)
+    print("here working")
+    return render(request,'shop-grid.html',{'product':pro,'category':ca})
+
 def shop_details(request):
     return render(request,'shop-details.html')
 def shop_cart(request):
