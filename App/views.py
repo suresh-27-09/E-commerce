@@ -18,6 +18,7 @@ def register(request):
         return redirect('login')
     else:
         return render(request,'register.html')
+    
 def login(request):
     if request.method=="POST":
         email=request.POST.get('uemail')
@@ -34,6 +35,7 @@ def logout(request):
     
 def blog(request):
     return render(request,'blog.html')
+
 def blog_details(request):
     return render(request,'blog-details.html')
 def shop(request):
