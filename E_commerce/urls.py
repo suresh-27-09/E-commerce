@@ -29,8 +29,8 @@ urlpatterns = [
     path('blog_details/',views.blog_details,name='blog_details'),
     path('shop/',views.shop,name='shop'),
     path('shop/<int:id>',views.shopcat,name="shopcat"),
-    path('shop_details/',views.shop_details,name='shop_details'),
-    path('shop_cart/',views.shop_cart,name='shop_cart'),
+    path('shop_details/<int:id>',views.shop_details,name='shop_details'),
+    path('shop_cart/<int:id>',views.shop_cart,name='shop_cart'),
     path('checkout/',views.checkout,name='checkout'),
     path('contact/',views.contact,name='contact'),
 

@@ -31,7 +31,7 @@ def logout(request):
     if 'email' in request.session:
         del request.session['email']
         return redirect('index')
-
+    
 def blog(request):
     return render(request,'blog.html')
 def blog_details(request):
@@ -39,11 +39,6 @@ def blog_details(request):
 def shop(request):
     pro=Products.objects.all()
     ca=Category.objects.all()
-   
-
-
-
-
     return render(request,'shop-grid.html',{'product':pro,'category':ca})
 def shopcat(request,id):
     pro=Products.objects.all()
@@ -53,10 +48,14 @@ def shopcat(request,id):
     print("here working")
     return render(request,'shop-grid.html',{'product':pro,'category':ca,'catpro':cat_pro})
 
-def shop_details(request):
-    return render(request,'shop-details.html')
-def shop_cart(request):
-    return render(request,'shoping-cart.html')
+def shop_details(request,id):
+    pro=Products.objects.filter(pid=id)
+    print("hi ",pro)
+    return render(request,'shop-details.html',{'det':pro})
+def shop_cart(request,id):
+    pro=Products.objects.filter(pid=id)
+
+    return render(request,'shoping-cart.html',{'pro':pro})
 def checkout(request):
     return render(request,'checkout.html')
 def contact(request):

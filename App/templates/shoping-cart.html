@@ -257,13 +257,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+{% for i in pro %}
+
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-1.jpg" alt="">
-                                        <h5>Vegetable’s Package</h5>
+                                        <img src="{{ i.p_img.url }}" alt="">
+                                        <h5>{{i.p_name}}/h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        $55.00
+                                        ${{i.p_price}}
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
@@ -279,6 +282,11 @@
                                         <span class="icon_close"></span>
                                     </td>
                                 </tr>
+{% endfor %}
+
+
+
+
                                 <tr>
                                     <td class="shoping__cart__item">
                                         <img src="img/cart/cart-2.jpg" alt="">
